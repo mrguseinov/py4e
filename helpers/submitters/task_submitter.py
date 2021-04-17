@@ -238,6 +238,26 @@ _ALL_DATA = {
         (["South Federal University"], "ChIJ1Z9sheJZkFQRDePQqQebCdg"),
         (["Northwestern University"], "ChIJOUw-cAvQD4gRBmHV-me1Nyw"),
     ],
+    "14.1": [
+        (
+            [],
+            "Name: Dog\n\nAttributes: ['__class__', '__delattr__', '__dict__',"
+            " '__dir__', '__doc__', '__eq__', '__format__', '__ge__',"
+            " '__getattribute__', '__gt__', '__hash__', '__init__',"
+            " '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__',"
+            " '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__',"
+            " '__sizeof__', '__str__', '__subclasshook__', '__weakref__']\n",
+        )
+    ],
+    "14.2": [([], (9, 8))],
+    "14.3": [
+        (
+            [],
+            "Cooper is walking.\nCooper is barking.\n\n[<class"
+            " '__main__.foo.<locals>.Dog'>, <class '__main__.foo.<locals>.Animal'>,"
+            " <class 'object'>]\n",
+        )
+    ],
     "15.1": [([], ("41686D65643137",))],
     "15.2": [
         (
