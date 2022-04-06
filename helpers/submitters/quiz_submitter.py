@@ -4,7 +4,8 @@ from helpers.submitters.submitter import Submitter
 from helpers.widgets import MyCheckBoxes, MyRadioButtons
 
 _ALL_ANSWERS = {
-    "01": [2, 1, 2, 1, 4, 4, 3, 3, 2, 1],
+    "01.1": [2, 1, 2, 1, 4, 4, 3, 3, 2, 1],
+    "01.2": [1, [1, 3, 4], 1, 3, [1, 3], [1, 4], 1, 2, 4, 3],
     "02": [3, 1, 4, 1, 1, 4, 4, 4, 4, 1],
     "03": [4, 3, 1, 3, 2, 1, 4, 1, 1, 2],
     "04": [4, 2, 2, 3, 1, 1, 1, 1, 1, 1],
