@@ -1,16 +1,14 @@
-from __future__ import annotations
-
 import builtins
 import sys
 from io import StringIO
 from types import TracebackType
-from typing import Any, Callable, Optional, Type
+from typing import Any, Callable, Dict, List, Optional, Tuple, Type, Union
 
 from helpers.submitters.submitter import Submitter
 
 
 class TaskSubmitterBase(Submitter):
-    def __enter__(self) -> TaskSubmitterBase:
+    def __enter__(self) -> "TaskSubmitterBase":
         self._captured_output = StringIO()
 
         self._original_input = builtins.input
@@ -36,10 +34,10 @@ class TaskSubmitterBase(Submitter):
         self._captured_output.seek(0)
         return output
 
-    def _set_input(self, values: list[str]) -> None:
+    def _set_input(self, values: List[str]) -> None:
         self._input_values = iter(values)
 
-    def _show_results(self, test_results: list[bool]) -> None:
+    def _show_results(self, test_results: List[bool]) -> None:
         if all(test_results):
             self._show_message("You have passed the tests! :)", "green")
         else:
@@ -54,10 +52,10 @@ class TaskSubmitterBase(Submitter):
     def _test_return(
         self,
         func: Callable,
-        data: list[
-            tuple[
-                list[int | float | str],
-                int | float | str | list | dict | tuple | BaseException,
+        data: List[
+            Tuple[
+                List[Union[int, float, str]],
+                Union[int, float, str, List, Dict, Tuple, BaseException],
             ]
         ],
     ) -> None:
@@ -73,7 +71,7 @@ class TaskSubmitterBase(Submitter):
                 test_results.append(func(*input) == output)
         self._show_results(test_results)
 
-    def _test_print(self, func: Callable, data: list[tuple[list[str], str]]) -> None:
+    def _test_print(self, func: Callable, data: List[Tuple[List[str], str]]) -> None:
         test_results = []
         for input, output in data:
             self._set_input(input)
