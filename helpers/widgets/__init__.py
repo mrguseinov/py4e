@@ -1,2 +1,2 @@
-from .checkboxes import MyCheckBoxes
-from .radiobuttons import MyRadioButtons
+from .checkboxes import MyCheckBoxes as MyCheckBoxes
+from .radiobuttons import MyRadioButtons as MyRadioButtons
