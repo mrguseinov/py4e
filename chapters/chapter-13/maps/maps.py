@@ -2,10 +2,13 @@
 
 import os
 import sys
-from urllib.parse import urlencode
 
 import requests
 from dotenv import load_dotenv
+
+
+class GoogleMapsApiError(Exception):
+    """General exception for all Google Maps API related errors."""
 
 
 def load_environment_variables():
@@ -14,11 +17,12 @@ def load_environment_variables():
         load_dotenv(dotenv_path)
     else:
         print("The file '.env' was not found. Create it based on '.env.example'.")
-        sys.exit()
+        sys.exit(1)
 
 
-def make_request(endpoint, params):
-    response = requests.get(endpoint + urlencode(params)).json()
+def make_request_to_maps_api(endpoint, params):
+    base_url = "https://maps.googleapis.com/maps/api"
+    response = requests.get(f"{base_url}{endpoint}/json", params=params).json()
 
     status = response.get("status")
     if status == "OK":
@@ -26,14 +30,12 @@ def make_request(endpoint, params):
     if status == "ZERO_RESULTS":
         return {}
 
-    raise Exception(response)
+    raise GoogleMapsApiError(response)
 
 
 def get_geocode(target):
-    endpoint = "https://maps.googleapis.com/maps/api/geocode/json?"
     params = {"address": target, "key": os.environ["API_KEY"]}
-
-    geocode = make_request(endpoint, params)
+    geocode = make_request_to_maps_api("/geocode", params)
     if not geocode:
         return {}
 
@@ -43,7 +45,6 @@ def get_geocode(target):
 
 
 def get_nearby_place_ids(location, keyword, radius):
-    endpoint = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
     params = {
         "key": os.environ["API_KEY"],
         "location": location,
@@ -51,8 +52,7 @@ def get_nearby_place_ids(location, keyword, radius):
         "keyword": keyword,
         "opennow": "true",
     }
-
-    places = make_request(endpoint, params)
+    places = make_request_to_maps_api("/place/nearbysearch", params)
     if not places:
         return []
 
@@ -60,20 +60,17 @@ def get_nearby_place_ids(location, keyword, radius):
 
 
 def get_place_details(place_id):
-    endpoint = "https://maps.googleapis.com/maps/api/place/details/json?"
     params = {
         "key": os.environ["API_KEY"],
         "place_id": place_id,
         "fields": "name,formatted_address,formatted_phone_number,url",
     }
-
-    details = make_request(endpoint, params)
+    details = make_request_to_maps_api("/place/details", params)
     if not details:
         return {}
 
     for param in params["fields"].split(","):
         details["result"][param] = details["result"].get(param, "Not available.")
-
     return details["result"]
 
 
