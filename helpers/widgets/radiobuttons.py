@@ -4,7 +4,7 @@ from ipywidgets import Layout, RadioButtons
 
 class MyRadioButtons:
     def __init__(self, num_options: int) -> None:
-        options = [str(option_number + 1) for option_number in range(num_options)]
+        options = range(1, num_options + 1)
         layout = Layout(margin="0 0 0 20px")
         self._radiobuttons = RadioButtons(options=options, layout=layout, value=None)
 
@@ -16,5 +16,4 @@ class MyRadioButtons:
         display(self._radiobuttons)
 
     def _get_selected(self) -> int:
-        selected = self._radiobuttons.value
-        return 0 if selected is None else int(selected)
+        return self._radiobuttons.value or 0  # type: ignore

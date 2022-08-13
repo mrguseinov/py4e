@@ -11,24 +11,24 @@ Update the software.
 sudo apt update && sudo apt upgrade -y
 ```
 
-Install python and pip (python package manager).
+Install [`python`](https://www.python.org/) and [`pip`](https://pip.pypa.io/) (python package manager).
 ```
-sudo apt install python3.8 python3-pip
+sudo apt install python3.10 python3-pip
 ```
 
-Install virtualenv (python environments manager).
+Install [`virtualenv`](https://virtualenv.pypa.io/) (python environments manager).
 ```
 pip3 install virtualenv && source ~/.profile
 ```
 
-Clone the repository and cd into it.
+Clone this repository and cd into it.
 ```
 git clone https://github.com/mrguseinov/py4e.git && cd py4e
 ```
 
 Create a new virtual environment and activate it.
 ```
-virtualenv venv && source venv/bin/activate
+virtualenv .venv && source .venv/bin/activate
 ```
 
 Install the required packages.
@@ -42,7 +42,7 @@ pip install -r requirements.txt
 
 Activate the virtual environment if it's not active.
 ```
-source venv/bin/activate
+source .venv/bin/activate
 ```
 
 Start the jupyter lab.
