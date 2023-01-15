@@ -2,9 +2,7 @@ TASK_DATA = {
     "01.1": [([], "Hello, World!\n")],
     "02.1": [(["Random"], "Enter your name:\nHello, Random!\n")],
     "02.2": [(["45", "2.625"], "Enter hours:\nEnter rate:\nGross pay: 118.12\n")],
-    "02.3": [
-        (["15.67"], "Enter Celsius temperature:\nFahrenheit temperature: 60.21\n")
-    ],
+    "02.3": [(["15.67"], "Enter Celsius temperature:\nFahrenheit temperature: 60.21\n")],
     "03.1": [
         (["36", "1.456"], "Enter hours:\nEnter rate:\nGross pay: 52.42\n"),
         (["40", "2.1"], "Enter hours:\nEnter rate:\nGross pay: 84.0\n"),
@@ -231,7 +229,7 @@ TASK_DATA = {
         (["http://py4e-data.dr-chuck.net/comments_297239.json"], 2494),
     ],
     "13.3": [
-        (["South Federal University"], "ChIJ1Z9sheJZkFQRDePQqQebCdg"),
+        (["South Federal University"], "ChIJNeHD4p-540AR2Q0_ZjwmKJ8"),
         (["Northwestern University"], "ChIJOUw-cAvQD4gRBmHV-me1Nyw"),
     ],
     "14.1": [
