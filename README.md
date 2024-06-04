@@ -13,7 +13,7 @@ sudo apt update && sudo apt upgrade -y
 
 Install [`python`](https://www.python.org/) and [`pip`](https://pip.pypa.io/) (python package manager).
 ```
-sudo apt install python3.11 python3-pip
+sudo apt install python3.12 python3-pip
 ```
 
 Install [`virtualenv`](https://virtualenv.pypa.io/) (python environments manager).
