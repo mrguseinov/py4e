@@ -171,10 +171,10 @@ TASK_DATA = {
         (
             [],
             {
+                "iupui.edu": 8,
+                "umich.edu": 7,
                 "uct.ac.za": 6,
                 "media.berkeley.edu": 4,
-                "umich.edu": 7,
-                "iupui.edu": 8,
                 "caret.cam.ac.uk": 1,
                 "gmail.com": 1,
             },
