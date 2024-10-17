@@ -229,8 +229,8 @@ TASK_DATA = {
         (["http://py4e-data.dr-chuck.net/comments_297239.json"], 2494),
     ],
     "13.3": [
-        (["South Federal University"], "ChIJNeHD4p-540AR2Q0_ZjwmKJ8"),
-        (["Northwestern University"], "ChIJOUw-cAvQD4gRBmHV-me1Nyw"),
+        (["South Federal University"], "6FV8QPRJ+VQ"),
+        (["Simon Bolivar University"], "47RFHC3H+G6"),
     ],
     "14.1": [
         (
