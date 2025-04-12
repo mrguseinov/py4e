@@ -1,5 +1,17 @@
-.venv/
+# Python-generated files
 __pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv/
+
+# Jupyter-generated files
 .ipynb_checkpoints/
 
-.env
+# Environment variables
+*.env*
+!.env.example
