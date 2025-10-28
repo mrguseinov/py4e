@@ -10,3 +10,6 @@ dependencies = [
     "jupyterlab>=4.4.0",
     "lxml>=5.3.2",
 ]
+
+[tool.ruff]
+line-length = 99
